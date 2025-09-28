@@ -1,11 +1,8 @@
-from dotenv import load_dotenv
 from InquirerPy import inquirer
 from prbr25_startgg_queries.entrypoint import refresh_raw_events
 
 from prbr25.ui.not_yet_implemented import not_yet_implemented
 from prbr25.ui.utils import clear_screen
-
-load_dotenv()
 
 
 def main_menu():
@@ -24,6 +21,7 @@ def main_menu():
 
         if choice == "Refresh Events":
             refresh_raw_events()
+            input("Press Enter to go back...")
         elif choice == "Add Event URL":
             not_yet_implemented()
         elif choice == "Validate Events":
@@ -32,6 +30,3 @@ def main_menu():
             not_yet_implemented()
         else:
             break
-
-
-main_menu()
