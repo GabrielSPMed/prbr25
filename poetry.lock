@@ -1396,7 +1396,7 @@ sqlalchemy = "^2.0.43"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-startgg-queries.git"
 reference = "HEAD"
-resolved_reference = "1e0c459e1a94ddfa7e63cb9db04ae03942893965"
+resolved_reference = "a65c30e319cd8cfd7ec9a491bae454f493aedacb"
 
 [[package]]
 name = "typing-extensions"
