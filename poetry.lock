@@ -1376,7 +1376,7 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "startgg-queries"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 optional = false
 python-versions = ">=3.12,<4.0"
@@ -1396,7 +1396,7 @@ sqlalchemy = "^2.0.43"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-startgg-queries.git"
 reference = "HEAD"
-resolved_reference = "a65c30e319cd8cfd7ec9a491bae454f493aedacb"
+resolved_reference = "a26af0ab596d7cb1c82d03b0700a4f99412b36dc"
 
 [[package]]
 name = "typing-extensions"
