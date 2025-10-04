@@ -2,6 +2,7 @@ from InquirerPy import inquirer
 from prbr25_startgg_queries.entrypoint import refresh_raw_events
 
 from prbr25.ui.not_yet_implemented import not_yet_implemented
+from prbr25.ui.upload_tournament import upload_tournament
 from prbr25.ui.utils import clear_screen
 
 
@@ -9,7 +10,7 @@ def main_menu():
     while True:
         clear_screen()
         choice = inquirer.select(
-            message="Welcome to PRBR25:\n\n",
+            message="Welcome to PRBR25🇧🇷:",
             choices=[
                 "Refresh Events",
                 "Add Event URL",
@@ -21,12 +22,12 @@ def main_menu():
 
         if choice == "Refresh Events":
             refresh_raw_events()
-            input("Press Enter to go back...")
         elif choice == "Add Event URL":
-            not_yet_implemented()
+            upload_tournament()
         elif choice == "Validate Events":
             not_yet_implemented()
         elif choice == "Validate Players":
             not_yet_implemented()
-        else:
+        elif choice == "Exit":
             break
+        input("Press Enter to go back...")
