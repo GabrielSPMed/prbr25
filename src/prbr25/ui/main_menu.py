@@ -20,14 +20,15 @@ def main_menu():
             ],
         ).execute()
 
-        if choice == "Refresh Events":
-            refresh_raw_events()
-        elif choice == "Add Event URL":
-            upload_tournament()
-        elif choice == "Validate Events":
-            not_yet_implemented()
-        elif choice == "Validate Players":
-            not_yet_implemented()
-        elif choice == "Exit":
-            break
+        match choice:
+            case "Refresh Events":
+                refresh_raw_events()
+            case "Add Event URL":
+                upload_tournament()
+            case "Validate Events":
+                not_yet_implemented()
+            case "Validate Players":
+                not_yet_implemented()
+            case _:
+                break
         input("Press Enter to go back...")
