@@ -878,54 +878,67 @@ files = [
 
 [[package]]
 name = "pandas"
-version = "2.3.2"
+version = "2.3.3"
 description = "Powerful data structures for data analysis, time series, and statistics"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "pandas-2.3.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:52bc29a946304c360561974c6542d1dd628ddafa69134a7131fdfd6a5d7a1a35"},
-    {file = "pandas-2.3.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:220cc5c35ffaa764dd5bb17cf42df283b5cb7fdf49e10a7b053a06c9cb48ee2b"},
-    {file = "pandas-2.3.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:42c05e15111221384019897df20c6fe893b2f697d03c811ee67ec9e0bb5a3424"},
-    {file = "pandas-2.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cc03acc273c5515ab69f898df99d9d4f12c4d70dbfc24c3acc6203751d0804cf"},
-    {file = "pandas-2.3.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:d25c20a03e8870f6339bcf67281b946bd20b86f1a544ebbebb87e66a8d642cba"},
-    {file = "pandas-2.3.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:21bb612d148bb5860b7eb2c10faacf1a810799245afd342cf297d7551513fbb6"},
-    {file = "pandas-2.3.2-cp310-cp310-win_amd64.whl", hash = "sha256:b62d586eb25cb8cb70a5746a378fc3194cb7f11ea77170d59f889f5dfe3cec7a"},
-    {file = "pandas-2.3.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:1333e9c299adcbb68ee89a9bb568fc3f20f9cbb419f1dd5225071e6cddb2a743"},
-    {file = "pandas-2.3.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:76972bcbd7de8e91ad5f0ca884a9f2c477a2125354af624e022c49e5bd0dfff4"},
-    {file = "pandas-2.3.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b98bdd7c456a05eef7cd21fd6b29e3ca243591fe531c62be94a2cc987efb5ac2"},
-    {file = "pandas-2.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1d81573b3f7db40d020983f78721e9bfc425f411e616ef019a10ebf597aedb2e"},
-    {file = "pandas-2.3.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:e190b738675a73b581736cc8ec71ae113d6c3768d0bd18bffa5b9a0927b0b6ea"},
-    {file = "pandas-2.3.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:c253828cb08f47488d60f43c5fc95114c771bbfff085da54bfc79cb4f9e3a372"},
-    {file = "pandas-2.3.2-cp311-cp311-win_amd64.whl", hash = "sha256:9467697b8083f9667b212633ad6aa4ab32436dcbaf4cd57325debb0ddef2012f"},
-    {file = "pandas-2.3.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:3fbb977f802156e7a3f829e9d1d5398f6192375a3e2d1a9ee0803e35fe70a2b9"},
-    {file = "pandas-2.3.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:1b9b52693123dd234b7c985c68b709b0b009f4521000d0525f2b95c22f15944b"},
-    {file = "pandas-2.3.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0bd281310d4f412733f319a5bc552f86d62cddc5f51d2e392c8787335c994175"},
-    {file = "pandas-2.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:96d31a6b4354e3b9b8a2c848af75d31da390657e3ac6f30c05c82068b9ed79b9"},
-    {file = "pandas-2.3.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:df4df0b9d02bb873a106971bb85d448378ef14b86ba96f035f50bbd3688456b4"},
-    {file = "pandas-2.3.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:213a5adf93d020b74327cb2c1b842884dbdd37f895f42dcc2f09d451d949f811"},
-    {file = "pandas-2.3.2-cp312-cp312-win_amd64.whl", hash = "sha256:8c13b81a9347eb8c7548f53fd9a4f08d4dfe996836543f805c987bafa03317ae"},
-    {file = "pandas-2.3.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:0c6ecbac99a354a051ef21c5307601093cb9e0f4b1855984a084bfec9302699e"},
-    {file = "pandas-2.3.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:c6f048aa0fd080d6a06cc7e7537c09b53be6642d330ac6f54a600c3ace857ee9"},
-    {file = "pandas-2.3.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0064187b80a5be6f2f9c9d6bdde29372468751dfa89f4211a3c5871854cfbf7a"},
-    {file = "pandas-2.3.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4ac8c320bded4718b298281339c1a50fb00a6ba78cb2a63521c39bec95b0209b"},
-    {file = "pandas-2.3.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:114c2fe4f4328cf98ce5716d1532f3ab79c5919f95a9cfee81d9140064a2e4d6"},
-    {file = "pandas-2.3.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:48fa91c4dfb3b2b9bfdb5c24cd3567575f4e13f9636810462ffed8925352be5a"},
-    {file = "pandas-2.3.2-cp313-cp313-win_amd64.whl", hash = "sha256:12d039facec710f7ba305786837d0225a3444af7bbd9c15c32ca2d40d157ed8b"},
-    {file = "pandas-2.3.2-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:c624b615ce97864eb588779ed4046186f967374185c047070545253a52ab2d57"},
-    {file = "pandas-2.3.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:0cee69d583b9b128823d9514171cabb6861e09409af805b54459bd0c821a35c2"},
-    {file = "pandas-2.3.2-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2319656ed81124982900b4c37f0e0c58c015af9a7bbc62342ba5ad07ace82ba9"},
-    {file = "pandas-2.3.2-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b37205ad6f00d52f16b6d09f406434ba928c1a1966e2771006a9033c736d30d2"},
-    {file = "pandas-2.3.2-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:837248b4fc3a9b83b9c6214699a13f069dc13510a6a6d7f9ba33145d2841a012"},
-    {file = "pandas-2.3.2-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:d2c3554bd31b731cd6490d94a28f3abb8dd770634a9e06eb6d2911b9827db370"},
-    {file = "pandas-2.3.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:88080a0ff8a55eac9c84e3ff3c7665b3b5476c6fbc484775ca1910ce1c3e0b87"},
-    {file = "pandas-2.3.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:d4a558c7620340a0931828d8065688b3cc5b4c8eb674bcaf33d18ff4a6870b4a"},
-    {file = "pandas-2.3.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:45178cf09d1858a1509dc73ec261bf5b25a625a389b65be2e47b559905f0ab6a"},
-    {file = "pandas-2.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:77cefe00e1b210f9c76c697fedd8fdb8d3dd86563e9c8adc9fa72b90f5e9e4c2"},
-    {file = "pandas-2.3.2-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:13bd629c653856f00c53dc495191baa59bcafbbf54860a46ecc50d3a88421a96"},
-    {file = "pandas-2.3.2-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:36d627906fd44b5fd63c943264e11e96e923f8de77d6016dc2f667b9ad193438"},
-    {file = "pandas-2.3.2-cp39-cp39-win_amd64.whl", hash = "sha256:a9d7ec92d71a420185dec44909c32e9a362248c4ae2238234b76d5be37f208cc"},
-    {file = "pandas-2.3.2.tar.gz", hash = "sha256:ab7b58f8f82706890924ccdfb5f48002b83d2b5a3845976a9fb705d36c34dcdb"},
+    {file = "pandas-2.3.3-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:376c6446ae31770764215a6c937f72d917f214b43560603cd60da6408f183b6c"},
+    {file = "pandas-2.3.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:e19d192383eab2f4ceb30b412b22ea30690c9e618f78870357ae1d682912015a"},
+    {file = "pandas-2.3.3-cp310-cp310-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5caf26f64126b6c7aec964f74266f435afef1c1b13da3b0636c7518a1fa3e2b1"},
+    {file = "pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:dd7478f1463441ae4ca7308a70e90b33470fa593429f9d4c578dd00d1fa78838"},
+    {file = "pandas-2.3.3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:4793891684806ae50d1288c9bae9330293ab4e083ccd1c5e383c34549c6e4250"},
+    {file = "pandas-2.3.3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:28083c648d9a99a5dd035ec125d42439c6c1c525098c58af0fc38dd1a7a1b3d4"},
+    {file = "pandas-2.3.3-cp310-cp310-win_amd64.whl", hash = "sha256:503cf027cf9940d2ceaa1a93cfb5f8c8c7e6e90720a2850378f0b3f3b1e06826"},
+    {file = "pandas-2.3.3-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:602b8615ebcc4a0c1751e71840428ddebeb142ec02c786e8ad6b1ce3c8dec523"},
+    {file = "pandas-2.3.3-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:8fe25fc7b623b0ef6b5009149627e34d2a4657e880948ec3c840e9402e5c1b45"},
+    {file = "pandas-2.3.3-cp311-cp311-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:b468d3dad6ff947df92dcb32ede5b7bd41a9b3cceef0a30ed925f6d01fb8fa66"},
+    {file = "pandas-2.3.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b98560e98cb334799c0b07ca7967ac361a47326e9b4e5a7dfb5ab2b1c9d35a1b"},
+    {file = "pandas-2.3.3-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:1d37b5848ba49824e5c30bedb9c830ab9b7751fd049bc7914533e01c65f79791"},
+    {file = "pandas-2.3.3-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:db4301b2d1f926ae677a751eb2bd0e8c5f5319c9cb3f88b0becbbb0b07b34151"},
+    {file = "pandas-2.3.3-cp311-cp311-win_amd64.whl", hash = "sha256:f086f6fe114e19d92014a1966f43a3e62285109afe874f067f5abbdcbb10e59c"},
+    {file = "pandas-2.3.3-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:6d21f6d74eb1725c2efaa71a2bfc661a0689579b58e9c0ca58a739ff0b002b53"},
+    {file = "pandas-2.3.3-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:3fd2f887589c7aa868e02632612ba39acb0b8948faf5cc58f0850e165bd46f35"},
+    {file = "pandas-2.3.3-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ecaf1e12bdc03c86ad4a7ea848d66c685cb6851d807a26aa245ca3d2017a1908"},
+    {file = "pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b3d11d2fda7eb164ef27ffc14b4fcab16a80e1ce67e9f57e19ec0afaf715ba89"},
+    {file = "pandas-2.3.3-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:a68e15f780eddf2b07d242e17a04aa187a7ee12b40b930bfdd78070556550e98"},
+    {file = "pandas-2.3.3-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:371a4ab48e950033bcf52b6527eccb564f52dc826c02afd9a1bc0ab731bba084"},
+    {file = "pandas-2.3.3-cp312-cp312-win_amd64.whl", hash = "sha256:a16dcec078a01eeef8ee61bf64074b4e524a2a3f4b3be9326420cabe59c4778b"},
+    {file = "pandas-2.3.3-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:56851a737e3470de7fa88e6131f41281ed440d29a9268dcbf0002da5ac366713"},
+    {file = "pandas-2.3.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:bdcd9d1167f4885211e401b3036c0c8d9e274eee67ea8d0758a256d60704cfe8"},
+    {file = "pandas-2.3.3-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e32e7cc9af0f1cc15548288a51a3b681cc2a219faa838e995f7dc53dbab1062d"},
+    {file = "pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:318d77e0e42a628c04dc56bcef4b40de67918f7041c2b061af1da41dcff670ac"},
+    {file = "pandas-2.3.3-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:4e0a175408804d566144e170d0476b15d78458795bb18f1304fb94160cabf40c"},
+    {file = "pandas-2.3.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:93c2d9ab0fc11822b5eece72ec9587e172f63cff87c00b062f6e37448ced4493"},
+    {file = "pandas-2.3.3-cp313-cp313-win_amd64.whl", hash = "sha256:f8bfc0e12dc78f777f323f55c58649591b2cd0c43534e8355c51d3fede5f4dee"},
+    {file = "pandas-2.3.3-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:75ea25f9529fdec2d2e93a42c523962261e567d250b0013b16210e1d40d7c2e5"},
+    {file = "pandas-2.3.3-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:74ecdf1d301e812db96a465a525952f4dde225fdb6d8e5a521d47e1f42041e21"},
+    {file = "pandas-2.3.3-cp313-cp313t-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:6435cb949cb34ec11cc9860246ccb2fdc9ecd742c12d3304989017d53f039a78"},
+    {file = "pandas-2.3.3-cp313-cp313t-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:900f47d8f20860de523a1ac881c4c36d65efcb2eb850e6948140fa781736e110"},
+    {file = "pandas-2.3.3-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:a45c765238e2ed7d7c608fc5bc4a6f88b642f2f01e70c0c23d2224dd21829d86"},
+    {file = "pandas-2.3.3-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:c4fc4c21971a1a9f4bdb4c73978c7f7256caa3e62b323f70d6cb80db583350bc"},
+    {file = "pandas-2.3.3-cp314-cp314-macosx_10_13_x86_64.whl", hash = "sha256:ee15f284898e7b246df8087fc82b87b01686f98ee67d85a17b7ab44143a3a9a0"},
+    {file = "pandas-2.3.3-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:1611aedd912e1ff81ff41c745822980c49ce4a7907537be8692c8dbc31924593"},
+    {file = "pandas-2.3.3-cp314-cp314-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:6d2cefc361461662ac48810cb14365a365ce864afe85ef1f447ff5a1e99ea81c"},
+    {file = "pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:ee67acbbf05014ea6c763beb097e03cd629961c8a632075eeb34247120abcb4b"},
+    {file = "pandas-2.3.3-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:c46467899aaa4da076d5abc11084634e2d197e9460643dd455ac3db5856b24d6"},
+    {file = "pandas-2.3.3-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:6253c72c6a1d990a410bc7de641d34053364ef8bcd3126f7e7450125887dffe3"},
+    {file = "pandas-2.3.3-cp314-cp314-win_amd64.whl", hash = "sha256:1b07204a219b3b7350abaae088f451860223a52cfb8a6c53358e7948735158e5"},
+    {file = "pandas-2.3.3-cp314-cp314t-macosx_10_13_x86_64.whl", hash = "sha256:2462b1a365b6109d275250baaae7b760fd25c726aaca0054649286bcfbb3e8ec"},
+    {file = "pandas-2.3.3-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:0242fe9a49aa8b4d78a4fa03acb397a58833ef6199e9aa40a95f027bb3a1b6e7"},
+    {file = "pandas-2.3.3-cp314-cp314t-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a21d830e78df0a515db2b3d2f5570610f5e6bd2e27749770e8bb7b524b89b450"},
+    {file = "pandas-2.3.3-cp314-cp314t-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:2e3ebdb170b5ef78f19bfb71b0dc5dc58775032361fa188e814959b74d726dd5"},
+    {file = "pandas-2.3.3-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:d051c0e065b94b7a3cea50eb1ec32e912cd96dba41647eb24104b6c6c14c5788"},
+    {file = "pandas-2.3.3-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:3869faf4bd07b3b66a9f462417d0ca3a9df29a9f6abd5d0d0dbab15dac7abe87"},
+    {file = "pandas-2.3.3-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:c503ba5216814e295f40711470446bc3fd00f0faea8a086cbc688808e26f92a2"},
+    {file = "pandas-2.3.3-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:a637c5cdfa04b6d6e2ecedcb81fc52ffb0fd78ce2ebccc9ea964df9f658de8c8"},
+    {file = "pandas-2.3.3-cp39-cp39-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:854d00d556406bffe66a4c0802f334c9ad5a96b4f1f868adf036a21b11ef13ff"},
+    {file = "pandas-2.3.3-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:bf1f8a81d04ca90e32a0aceb819d34dbd378a98bf923b6398b9a3ec0bf44de29"},
+    {file = "pandas-2.3.3-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:23ebd657a4d38268c7dfbdf089fbc31ea709d82e4923c5ffd4fbd5747133ce73"},
+    {file = "pandas-2.3.3-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:5554c929ccc317d41a5e3d1234f3be588248e61f08a74dd17c9eabb535777dc9"},
+    {file = "pandas-2.3.3-cp39-cp39-win_amd64.whl", hash = "sha256:d3e28b3e83862ccf4d85ff19cf8c20b2ae7e503881711ff2d534dc8f761131aa"},
+    {file = "pandas-2.3.3.tar.gz", hash = "sha256:e05e1af93b977f7eafa636d043f9f94c7ee3ac81af99c13508215942e64c993b"},
 ]
 
 [package.dependencies]
@@ -973,6 +986,26 @@ files = [
 
 [package.extras]
 docs = ["Sphinx (>=4.1.2,<5.0.0)", "furo (>=2021.8.17-beta.43,<2022.0.0)", "myst-parser (>=0.15.1,<0.16.0)", "sphinx-autobuild (>=2021.3.14,<2022.0.0)", "sphinx-copybutton (>=0.4.0,<0.5.0)"]
+
+[[package]]
+name = "prbr-rds-client"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.12"
+groups = ["main"]
+files = []
+develop = false
+
+[package.dependencies]
+pandas = ">=2.3.3,<3.0.0"
+sqlalchemy = ">=2.0.44,<3.0.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/GabrielSPMed/prbr-rds-client.git"
+reference = "HEAD"
+resolved_reference = "f91db81c090c55f55cfa077ef41c5dac61aa920a"
 
 [[package]]
 name = "prompt-toolkit"
@@ -1280,73 +1313,73 @@ files = [
 
 [[package]]
 name = "sqlalchemy"
-version = "2.0.43"
+version = "2.0.44"
 description = "Database Abstraction Library"
 optional = false
 python-versions = ">=3.7"
 groups = ["main"]
 files = [
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:21ba7a08a4253c5825d1db389d4299f64a100ef9800e4624c8bf70d8f136e6ed"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:11b9503fa6f8721bef9b8567730f664c5a5153d25e247aadc69247c4bc605227"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:07097c0a1886c150ef2adba2ff7437e84d40c0f7dcb44a2c2b9c905ccfc6361c"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-musllinux_1_2_aarch64.whl", hash = "sha256:cdeff998cb294896a34e5b2f00e383e7c5c4ef3b4bfa375d9104723f15186443"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-musllinux_1_2_x86_64.whl", hash = "sha256:bcf0724a62a5670e5718957e05c56ec2d6850267ea859f8ad2481838f889b42c"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-win32.whl", hash = "sha256:c697575d0e2b0a5f0433f679bda22f63873821d991e95a90e9e52aae517b2e32"},
-    {file = "SQLAlchemy-2.0.43-cp37-cp37m-win_amd64.whl", hash = "sha256:d34c0f6dbefd2e816e8f341d0df7d4763d382e3f452423e752ffd1e213da2512"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:70322986c0c699dca241418fcf18e637a4369e0ec50540a2b907b184c8bca069"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:87accdbba88f33efa7b592dc2e8b2a9c2cdbca73db2f9d5c510790428c09c154"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c00e7845d2f692ebfc7d5e4ec1a3fd87698e4337d09e58d6749a16aedfdf8612"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:022e436a1cb39b13756cf93b48ecce7aa95382b9cfacceb80a7d263129dfd019"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:c5e73ba0d76eefc82ec0219d2301cb33bfe5205ed7a2602523111e2e56ccbd20"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:9c2e02f06c68092b875d5cbe4824238ab93a7fa35d9c38052c033f7ca45daa18"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-win32.whl", hash = "sha256:e7a903b5b45b0d9fa03ac6a331e1c1d6b7e0ab41c63b6217b3d10357b83c8b00"},
-    {file = "sqlalchemy-2.0.43-cp310-cp310-win_amd64.whl", hash = "sha256:4bf0edb24c128b7be0c61cd17eef432e4bef507013292415f3fb7023f02b7d4b"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:52d9b73b8fb3e9da34c2b31e6d99d60f5f99fd8c1225c9dad24aeb74a91e1d29"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f42f23e152e4545157fa367b2435a1ace7571cab016ca26038867eb7df2c3631"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4fb1a8c5438e0c5ea51afe9c6564f951525795cf432bed0c028c1cb081276685"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:db691fa174e8f7036afefe3061bc40ac2b770718be2862bfb03aabae09051aca"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:fe2b3b4927d0bc03d02ad883f402d5de201dbc8894ac87d2e981e7d87430e60d"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:4d3d9b904ad4a6b175a2de0738248822f5ac410f52c2fd389ada0b5262d6a1e3"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-win32.whl", hash = "sha256:5cda6b51faff2639296e276591808c1726c4a77929cfaa0f514f30a5f6156921"},
-    {file = "sqlalchemy-2.0.43-cp311-cp311-win_amd64.whl", hash = "sha256:c5d1730b25d9a07727d20ad74bc1039bbbb0a6ca24e6769861c1aa5bf2c4c4a8"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:20d81fc2736509d7a2bd33292e489b056cbae543661bb7de7ce9f1c0cd6e7f24"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:25b9fc27650ff5a2c9d490c13c14906b918b0de1f8fcbb4c992712d8caf40e83"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6772e3ca8a43a65a37c88e2f3e2adfd511b0b1da37ef11ed78dea16aeae85bd9"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1a113da919c25f7f641ffbd07fbc9077abd4b3b75097c888ab818f962707eb48"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:4286a1139f14b7d70141c67a8ae1582fc2b69105f1b09d9573494eb4bb4b2687"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:529064085be2f4d8a6e5fab12d36ad44f1909a18848fcfbdb59cc6d4bbe48efe"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-win32.whl", hash = "sha256:b535d35dea8bbb8195e7e2b40059e2253acb2b7579b73c1b432a35363694641d"},
-    {file = "sqlalchemy-2.0.43-cp312-cp312-win_amd64.whl", hash = "sha256:1c6d85327ca688dbae7e2b06d7d84cfe4f3fffa5b5f9e21bb6ce9d0e1a0e0e0a"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e7c08f57f75a2bb62d7ee80a89686a5e5669f199235c6d1dac75cd59374091c3"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:14111d22c29efad445cd5021a70a8b42f7d9152d8ba7f73304c4d82460946aaa"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:21b27b56eb2f82653168cefe6cb8e970cdaf4f3a6cb2c5e3c3c1cf3158968ff9"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9c5a9da957c56e43d72126a3f5845603da00e0293720b03bde0aacffcf2dc04f"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:5d79f9fdc9584ec83d1b3c75e9f4595c49017f5594fee1a2217117647225d738"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:9df7126fd9db49e3a5a3999442cc67e9ee8971f3cb9644250107d7296cb2a164"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-win32.whl", hash = "sha256:7f1ac7828857fcedb0361b48b9ac4821469f7694089d15550bbcf9ab22564a1d"},
-    {file = "sqlalchemy-2.0.43-cp313-cp313-win_amd64.whl", hash = "sha256:971ba928fcde01869361f504fcff3b7143b47d30de188b11c6357c0505824197"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:4e6aeb2e0932f32950cf56a8b4813cb15ff792fc0c9b3752eaf067cfe298496a"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:61f964a05356f4bca4112e6334ed7c208174511bd56e6b8fc86dad4d024d4185"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:46293c39252f93ea0910aababa8752ad628bcce3a10d3f260648dd472256983f"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:136063a68644eca9339d02e6693932116f6a8591ac013b0014479a1de664e40a"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:6e2bf13d9256398d037fef09fd8bf9b0bf77876e22647d10761d35593b9ac547"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:44337823462291f17f994d64282a71c51d738fc9ef561bf265f1d0fd9116a782"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-win32.whl", hash = "sha256:13194276e69bb2af56198fef7909d48fd34820de01d9c92711a5fa45497cc7ed"},
-    {file = "sqlalchemy-2.0.43-cp38-cp38-win_amd64.whl", hash = "sha256:334f41fa28de9f9be4b78445e68530da3c5fa054c907176460c81494f4ae1f5e"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:ceb5c832cc30663aeaf5e39657712f4c4241ad1f638d487ef7216258f6d41fe7"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:11f43c39b4b2ec755573952bbcc58d976779d482f6f832d7f33a8d869ae891bf"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:413391b2239db55be14fa4223034d7e13325a1812c8396ecd4f2c08696d5ccad"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c379e37b08c6c527181a397212346be39319fb64323741d23e46abd97a400d34"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:03d73ab2a37d9e40dec4984d1813d7878e01dbdc742448d44a7341b7a9f408c7"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:8cee08f15d9e238ede42e9bbc1d6e7158d0ca4f176e4eab21f88ac819ae3bd7b"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-win32.whl", hash = "sha256:b3edaec7e8b6dc5cd94523c6df4f294014df67097c8217a89929c99975811414"},
-    {file = "sqlalchemy-2.0.43-cp39-cp39-win_amd64.whl", hash = "sha256:227119ce0a89e762ecd882dc661e0aa677a690c914e358f0dd8932a2e8b2765b"},
-    {file = "sqlalchemy-2.0.43-py3-none-any.whl", hash = "sha256:1681c21dd2ccee222c2fe0bef671d1aef7c504087c9c4e800371cfcc8ac966fc"},
-    {file = "sqlalchemy-2.0.43.tar.gz", hash = "sha256:788bfcef6787a7764169cfe9859fe425bf44559619e1d9f56f5bddf2ebf6f417"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:471733aabb2e4848d609141a9e9d56a427c0a038f4abf65dd19d7a21fd563632"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:48bf7d383a35e668b984c805470518b635d48b95a3c57cb03f37eaa3551b5f9f"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2bf4bb6b3d6228fcf3a71b50231199fb94d2dd2611b66d33be0578ea3e6c2726"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-musllinux_1_2_aarch64.whl", hash = "sha256:e998cf7c29473bd077704cea3577d23123094311f59bdc4af551923b168332b1"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-musllinux_1_2_x86_64.whl", hash = "sha256:ebac3f0b5732014a126b43c2b7567f2f0e0afea7d9119a3378bde46d3dcad88e"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-win32.whl", hash = "sha256:3255d821ee91bdf824795e936642bbf43a4c7cedf5d1aed8d24524e66843aa74"},
+    {file = "SQLAlchemy-2.0.44-cp37-cp37m-win_amd64.whl", hash = "sha256:78e6c137ba35476adb5432103ae1534f2f5295605201d946a4198a0dea4b38e7"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:7c77f3080674fc529b1bd99489378c7f63fcb4ba7f8322b79732e0258f0ea3ce"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:4c26ef74ba842d61635b0152763d057c8d48215d5be9bb8b7604116a059e9985"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f4a172b31785e2f00780eccab00bc240ccdbfdb8345f1e6063175b3ff12ad1b0"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f9480c0740aabd8cb29c329b422fb65358049840b34aba0adf63162371d2a96e"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:17835885016b9e4d0135720160db3095dc78c583e7b902b6be799fb21035e749"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:cbe4f85f50c656d753890f39468fcd8190c5f08282caf19219f684225bfd5fd2"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-win32.whl", hash = "sha256:2fcc4901a86ed81dc76703f3b93ff881e08761c63263c46991081fd7f034b165"},
+    {file = "sqlalchemy-2.0.44-cp310-cp310-win_amd64.whl", hash = "sha256:9919e77403a483ab81e3423151e8ffc9dd992c20d2603bf17e4a8161111e55f5"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:0fe3917059c7ab2ee3f35e77757062b1bea10a0b6ca633c58391e3f3c6c488dd"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:de4387a354ff230bc979b46b2207af841dc8bf29847b6c7dbe60af186d97aefa"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c3678a0fb72c8a6a29422b2732fe423db3ce119c34421b5f9955873eb9b62c1e"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3cf6872a23601672d61a68f390e44703442639a12ee9dd5a88bbce52a695e46e"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:329aa42d1be9929603f406186630135be1e7a42569540577ba2c69952b7cf399"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:70e03833faca7166e6a9927fbee7c27e6ecde436774cd0b24bbcc96353bce06b"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-win32.whl", hash = "sha256:253e2f29843fb303eca6b2fc645aca91fa7aa0aa70b38b6950da92d44ff267f3"},
+    {file = "sqlalchemy-2.0.44-cp311-cp311-win_amd64.whl", hash = "sha256:7a8694107eb4308a13b425ca8c0e67112f8134c846b6e1f722698708741215d5"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:72fea91746b5890f9e5e0997f16cbf3d53550580d76355ba2d998311b17b2250"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:585c0c852a891450edbb1eaca8648408a3cc125f18cf433941fa6babcc359e29"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9b94843a102efa9ac68a7a30cd46df3ff1ed9c658100d30a725d10d9c60a2f44"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:119dc41e7a7defcefc57189cfa0e61b1bf9c228211aba432b53fb71ef367fda1"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:0765e318ee9179b3718c4fd7ba35c434f4dd20332fbc6857a5e8df17719c24d7"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:2e7b5b079055e02d06a4308d0481658e4f06bc7ef211567edc8f7d5dce52018d"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-win32.whl", hash = "sha256:846541e58b9a81cce7dee8329f352c318de25aa2f2bbe1e31587eb1f057448b4"},
+    {file = "sqlalchemy-2.0.44-cp312-cp312-win_amd64.whl", hash = "sha256:7cbcb47fd66ab294703e1644f78971f6f2f1126424d2b300678f419aa73c7b6e"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:ff486e183d151e51b1d694c7aa1695747599bb00b9f5f604092b54b74c64a8e1"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0b1af8392eb27b372ddb783b317dea0f650241cea5bd29199b22235299ca2e45"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2b61188657e3a2b9ac4e8f04d6cf8e51046e28175f79464c67f2fd35bceb0976"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b87e7b91a5d5973dda5f00cd61ef72ad75a1db73a386b62877d4875a8840959c"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:15f3326f7f0b2bfe406ee562e17f43f36e16167af99c4c0df61db668de20002d"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:1e77faf6ff919aa8cd63f1c4e561cac1d9a454a191bb864d5dd5e545935e5a40"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-win32.whl", hash = "sha256:ee51625c2d51f8baadf2829fae817ad0b66b140573939dd69284d2ba3553ae73"},
+    {file = "sqlalchemy-2.0.44-cp313-cp313-win_amd64.whl", hash = "sha256:c1c80faaee1a6c3428cecf40d16a2365bcf56c424c92c2b6f0f9ad204b899e9e"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2fc44e5965ea46909a416fff0af48a219faefd5773ab79e5f8a5fcd5d62b2667"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:dc8b3850d2a601ca2320d081874033684e246d28e1c5e89db0864077cfc8f5a9"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d733dec0614bb8f4bcb7c8af88172b974f685a31dc3a65cca0527e3120de5606"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:22be14009339b8bc16d6b9dc8780bacaba3402aa7581658e246114abbd2236e3"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:357bade0e46064f88f2c3a99808233e67b0051cdddf82992379559322dfeb183"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:4848395d932e93c1595e59a8672aa7400e8922c39bb9b0668ed99ac6fa867822"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-win32.whl", hash = "sha256:2f19644f27c76f07e10603580a47278abb2a70311136a7f8fd27dc2e096b9013"},
+    {file = "sqlalchemy-2.0.44-cp38-cp38-win_amd64.whl", hash = "sha256:1df4763760d1de0dfc8192cc96d8aa293eb1a44f8f7a5fbe74caf1b551905c5e"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:f7027414f2b88992877573ab780c19ecb54d3a536bef3397933573d6b5068be4"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:3fe166c7d00912e8c10d3a9a0ce105569a31a3d0db1a6e82c4e0f4bf16d5eca9"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3caef1ff89b1caefc28f0368b3bde21a7e3e630c2eddac16abd9e47bd27cc36a"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cc2856d24afa44295735e72f3c75d6ee7fdd4336d8d3a8f3d44de7aa6b766df2"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:11bac86b0deada30b6b5f93382712ff0e911fe8d31cb9bf46e6b149ae175eff0"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:4d18cd0e9a0f37c9f4088e50e3839fcb69a380a0ec957408e0b57cff08ee0a26"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-win32.whl", hash = "sha256:9e9018544ab07614d591a26c1bd4293ddf40752cc435caf69196740516af7100"},
+    {file = "sqlalchemy-2.0.44-cp39-cp39-win_amd64.whl", hash = "sha256:8e0e4e66fd80f277a8c3de016a81a554e76ccf6b8d881ee0b53200305a8433f6"},
+    {file = "sqlalchemy-2.0.44-py3-none-any.whl", hash = "sha256:19de7ca1246fbef9f9d1bff8f1ab25641569df226364a0e40457dc5457c54b05"},
+    {file = "sqlalchemy-2.0.44.tar.gz", hash = "sha256:0ae7454e1ab1d780aee69fd2aae7d6b8670a581d8847f2d1e0f7ddfbf47e5a22"},
 ]
 
 [package.dependencies]
-greenlet = {version = ">=1", markers = "python_version < \"3.14\" and (platform_machine == \"aarch64\" or platform_machine == \"ppc64le\" or platform_machine == \"x86_64\" or platform_machine == \"amd64\" or platform_machine == \"AMD64\" or platform_machine == \"win32\" or platform_machine == \"WIN32\")"}
+greenlet = {version = ">=1", markers = "platform_machine == \"aarch64\" or platform_machine == \"ppc64le\" or platform_machine == \"x86_64\" or platform_machine == \"amd64\" or platform_machine == \"AMD64\" or platform_machine == \"win32\" or platform_machine == \"WIN32\""}
 typing-extensions = ">=4.6.0"
 
 [package.extras]
@@ -1376,7 +1409,7 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "startgg-queries"
-version = "1.0.0"
+version = "1.0.1"
 description = ""
 optional = false
 python-versions = ">=3.12,<4.0"
@@ -1388,6 +1421,7 @@ develop = false
 dotenv = "^0.9.9"
 gql = {version = "^4.0.0", extras = ["all"]}
 pandas = "^2.3.2"
+prbr-rds-client = {git = "https://github.com/GabrielSPMed/prbr-rds-client.git"}
 psycopg2-binary = "^2.9.10"
 requests = "^2.32.5"
 sqlalchemy = "^2.0.43"
@@ -1396,7 +1430,7 @@ sqlalchemy = "^2.0.43"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-startgg-queries.git"
 reference = "HEAD"
-resolved_reference = "a26af0ab596d7cb1c82d03b0700a4f99412b36dc"
+resolved_reference = "eb2840a5f3718171b3c32bb5577bdb7b82d52521"
 
 [[package]]
 name = "typing-extensions"
