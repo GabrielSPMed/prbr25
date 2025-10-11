@@ -4,6 +4,7 @@ from prbr25_startgg_queries.entrypoint import refresh_raw_events
 from prbr25.ui.not_yet_implemented import not_yet_implemented
 from prbr25.ui.upload_tournament import upload_tournament
 from prbr25.ui.utils import clear_screen
+from prbr25.ui.validate_events import validate_events
 
 
 def main_menu():
@@ -26,7 +27,7 @@ def main_menu():
             case "Add Event URL":
                 upload_tournament()
             case "Validate Events":
-                not_yet_implemented()
+                validate_events()
             case "Validate Players":
                 not_yet_implemented()
             case _:
