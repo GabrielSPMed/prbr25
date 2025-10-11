@@ -9,6 +9,7 @@ dependencies = [
     "inquirerpy (>=0.3.4,<0.4.0)",
     "startgg-queries @ git+https://github.com/GabrielSPMed/prbr25-startgg-queries.git",
     "dotenv (>=0.9.9,<0.10.0)",
+    "prbr-rds-client @ git+https://github.com/GabrielSPMed/prbr-rds-client.git",
 ]
 
 [tool.poetry]
