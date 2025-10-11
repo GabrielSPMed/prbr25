@@ -1,0 +1,16 @@
+from os import environ
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+STARTGG_BEARER_TOKEN = environ["STARTGG_BEARER_TOKEN"]
+POSTGRES_USERNAME = environ["POSTGRES_USERNAME"]
+POSTGRES_PASSWORD = environ["POSTGRES_PASSWORD"]
+POSTGRES_PORT = int(environ["POSTGRES_PORT"])
+POSTGRES_DB = environ["POSTGRES_DB"]
+POSTGRES_HOST = environ["POSTGRES_HOST"]
+MAX_DATE_LIMIT = int(environ["MAX_DATE_LIMIT"])
+MIN_DATE_LIMIT = int(environ["MIN_DATE_LIMIT"])
+COUNTRY_CODE = environ["COUNTRY_CODE"]
+STARTGG_VIDEOGAME_ID = int(environ["STARTGG_VIDEOGAME_ID"])
