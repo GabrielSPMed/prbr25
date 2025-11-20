@@ -3,6 +3,7 @@ from typing import Dict
 from InquirerPy import inquirer
 from pandas import DataFrame, Series
 from prbr25_rds_client.postgres import Postgres
+from prbr25_startgg_queries.entrypoint import edit_filtered_column_from_id
 
 from prbr25.config import (
     POSTGRES_DB,
@@ -11,6 +12,7 @@ from prbr25.config import (
     POSTGRES_PORT,
     POSTGRES_USERNAME,
 )
+from prbr25.consolidate.events import consolidate_events
 from prbr25.ui.utils import clear_screen
 
 
@@ -69,6 +71,12 @@ def validate_events():
     print(
         f"Rejected tournaments:\n {(df[df.id.isin(state['rejected_ids'])].loc[:, ['tournament_name', 'event_name']])} "
     )
-
-
-validate_events()
+    if len(state["consolidated_ids"]) > 0:
+        edit_filtered_column_from_id(
+            state["consolidated_ids"], "raw_events", "validated", True
+        )
+        consolidate_events(state["consolidated_ids"])
+    if len(state["rejected_ids"]) > 0:
+        edit_filtered_column_from_id(
+            state["rejected_ids"], "raw_events", "validated", None
+        )
