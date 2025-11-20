@@ -989,7 +989,7 @@ docs = ["Sphinx (>=4.1.2,<5.0.0)", "furo (>=2021.8.17-beta.43,<2022.0.0)", "myst
 
 [[package]]
 name = "prbr-rds-client"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 optional = false
 python-versions = ">=3.12"
@@ -1005,7 +1005,7 @@ sqlalchemy = ">=2.0.44,<3.0.0"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr-rds-client.git"
 reference = "HEAD"
-resolved_reference = "f91db81c090c55f55cfa077ef41c5dac61aa920a"
+resolved_reference = "3082d621bcb073eb31bdb7d5a9fabef41d688a0d"
 
 [[package]]
 name = "prompt-toolkit"
@@ -1409,7 +1409,7 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "startgg-queries"
-version = "1.0.1"
+version = "1.1.1"
 description = ""
 optional = false
 python-versions = ">=3.12,<4.0"
@@ -1430,7 +1430,7 @@ sqlalchemy = "^2.0.43"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-startgg-queries.git"
 reference = "HEAD"
-resolved_reference = "eb2840a5f3718171b3c32bb5577bdb7b82d52521"
+resolved_reference = "987d5beb545b152c2524aab2c3a3d8d447983e08"
 
 [[package]]
 name = "typing-extensions"
