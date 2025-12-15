@@ -34,3 +34,28 @@ def validate_player(
     tournament_player_df = new_player_screen(entrant, tournament_player_df)
     validated_entrant_ids.append(entrant.id)
     return tournament_player_df
+
+
+def query_players_participated_in_event(sql: Postgres, event_id: int):
+    query = f"""SELECT e.id, e.player_id, p.value
+                FROM entrants e
+                JOIN players p ON e.player_id = p.id
+                WHERE e.event_id = {event_id}"""
+    return sql.query_db(query, "entrants")
+
+
+def get_list_of_dq_players(matches_df: DataFrame):
+    double_dq_list = get_double_dq_losers(matches_df)
+    return filter_never_won_without_dq(matches_df, double_dq_list)
+
+
+def get_double_dq_losers(df: DataFrame) -> list:
+    dq_df = df[df["dq"]]
+    counts = dq_df["losing_player_id"].value_counts()
+    double_dq_ids = counts[counts == 2].index.tolist()
+    return double_dq_ids
+
+
+def filter_never_won_without_dq(df: DataFrame, player_ids: list) -> list:
+    winners = df[~df["dq"]]["winning_player_id"].unique()
+    return [pid for pid in player_ids if pid not in winners]
