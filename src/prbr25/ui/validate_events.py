@@ -3,7 +3,10 @@ from typing import Dict
 from InquirerPy import inquirer
 from pandas import DataFrame, Series
 from prbr25_rds_client.postgres import Postgres
-from prbr25_startgg_queries.entrypoint import edit_filtered_column_from_id
+from prbr25_startgg_queries.entrypoint import (
+    edit_filtered_column_from_id,
+    update_entrants_table_from_event_id,
+)
 
 from prbr25.config import (
     POSTGRES_DB,
@@ -76,7 +79,14 @@ def validate_events():
             state["consolidated_ids"], "raw_events", "validated", True
         )
         consolidate_events(state["consolidated_ids"])
+        upload_entrants_from_validated_id_list(state["consolidated_ids"])
     if len(state["rejected_ids"]) > 0:
         edit_filtered_column_from_id(
             state["rejected_ids"], "raw_events", "validated", None
         )
+
+
+def upload_entrants_from_validated_id_list(validated_id_list):
+    print("uploading entrants")
+    for validated_id in validated_id_list:
+        update_entrants_table_from_event_id(validated_id)
