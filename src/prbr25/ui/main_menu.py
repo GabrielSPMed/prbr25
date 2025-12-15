@@ -5,6 +5,7 @@ from prbr25.ui.not_yet_implemented import not_yet_implemented
 from prbr25.ui.upload_tournament import upload_tournament
 from prbr25.ui.utils import clear_screen
 from prbr25.ui.validate_events import validate_events
+from prbr25.ui.validate_players import validate_players
 
 
 def main_menu():
@@ -17,6 +18,7 @@ def main_menu():
                 "Add Event URL",
                 "Validate Events",
                 "Validate Players",
+                "Merge Players",
                 "Exit",
             ],
         ).execute()
@@ -29,6 +31,8 @@ def main_menu():
             case "Validate Events":
                 validate_events()
             case "Validate Players":
+                validate_players()
+            case "Merge Players":
                 not_yet_implemented()
             case _:
                 break
