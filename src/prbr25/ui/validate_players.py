@@ -13,6 +13,8 @@ from prbr25.config import (
     POSTGRES_USERNAME,
 )
 from prbr25.consolidate.entrant import validate_player
+from prbr25.consolidate.events import update_tournament_values
+from prbr25.consolidate.matches import consolidate_matches
 from prbr25.consolidate.pandas_utils import get_empty_players_dataframe
 from prbr25.exceptions.exit_player_validation import ExitPlayerValidation
 from prbr25.ui.utils import display_event_being_validated
@@ -56,6 +58,11 @@ def iterate_consolidated_events(
                 logger.info(
                     f"No new players for {event_info.tournament_name}: {event_info.event_name}"
                 )
+                matches_df, updated_player_df = consolidate_matches(sql, event_id)
+                tournament_score = update_tournament_values(
+                    sql, event_id, matches_df, updated_player_df
+                )
+                # consolidate standings
         except ExitPlayerValidation:
             break
 
