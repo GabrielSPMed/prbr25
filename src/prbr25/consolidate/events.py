@@ -39,7 +39,7 @@ def update_tournament_values(
     tournament_score = num_entrants - n_dqs + player_bonus_score
     logger.debug("Updating tournament values")
     update_consolidated_event_values(sql, tournament_score, n_dqs, event_id)
-    return tournament_score
+    return tournament_score, dq_players_list
 
 
 def query_number_of_entrants(sql: Postgres, event_id: int):
@@ -55,3 +55,18 @@ def update_consolidated_event_values(
                 SET value = {tournament_score}, n_dqs = {n_dqs}
                 WHERE id = {event_id}"""
     sql.execute_update(query)
+
+
+def sort_event_ids_by_start_date(sql: Postgres, event_ids: list) -> list:
+    if not event_ids:
+        return []
+
+    ids_str = ",".join(str(id) for id in event_ids)
+    query = f"""
+        SELECT id 
+        FROM raw_events 
+        WHERE id IN ({ids_str})
+        ORDER BY start_at ASC
+    """
+    df = sql.query_db(query, "raw_events")
+    return df["id"].tolist()
