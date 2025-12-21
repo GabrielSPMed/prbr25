@@ -57,16 +57,18 @@ def update_consolidated_event_values(
     sql.execute_update(query)
 
 
-def sort_event_ids_by_start_date(sql: Postgres, event_ids: list) -> list:
+def sort_event_ids_by_start_date(sql: Postgres, event_ids: list) -> tuple:
     if not event_ids:
-        return []
+        return [], None, None
 
     ids_str = ",".join(str(id) for id in event_ids)
     query = f"""
-        SELECT id 
+        SELECT id, start_at
         FROM raw_events 
         WHERE id IN ({ids_str})
         ORDER BY start_at ASC
     """
     df = sql.query_db(query, "raw_events")
-    return df["id"].tolist()
+    earliest_date = df["start_at"].iloc[0]
+    month = earliest_date.month
+    return df["id"].tolist(), month
