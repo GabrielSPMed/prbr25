@@ -1,4 +1,4 @@
-from pandas import DataFrame, Series
+from pandas import DataFrame, Series, isna
 from prbr25_db_ops.player.search import get_tag_from_player_id
 from prbr25_logger.logger import setup_logger
 from prbr25_rds_client.postgres import Postgres
@@ -16,8 +16,9 @@ def validate_player(
     tournament_player_df: DataFrame,
     event_info: DataFrame,
     existing_player_df: DataFrame,
+    players_to_merge: list,
 ) -> DataFrame:
-    if entrant.player_id:
+    if not isna(entrant.player_id):
         existing_tag = get_tag_from_player_id(sql, entrant.player_id)
         if existing_tag:
             logger.info("Is already in the database")
@@ -29,9 +30,10 @@ def validate_player(
             validated_entrant_ids.append(entrant.id)
             return tournament_player_df
 
-    logger.info("is anonymous")
     display_similar_players(entrant, existing_player_df, event_info)
-    tournament_player_df = new_player_screen(entrant, tournament_player_df)
+    tournament_player_df = new_player_screen(
+        entrant, tournament_player_df, players_to_merge
+    )
     validated_entrant_ids.append(entrant.id)
     return tournament_player_df
 
