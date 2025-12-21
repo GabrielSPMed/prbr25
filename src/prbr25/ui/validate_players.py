@@ -1,6 +1,7 @@
 from pandas import DataFrame
 from prbr25_db_ops.event.event_data import query_event_info_from_id
 from prbr25_db_ops.player.search import fetch_all_players
+from prbr25_db_ops.reporting.lock.verification import check_lock
 from prbr25_logger.logger import setup_logger
 from prbr25_rds_client.postgres import Postgres
 from prbr25_startgg_queries.entrypoint import edit_filtered_column_from_id
@@ -36,7 +37,12 @@ def query_entrants_to_validate(sql: Postgres) -> DataFrame:
 
 def iterate_consolidated_events(sql: Postgres, unvalidated_entrants_df: DataFrame):
     unvalidated_event_ids = list(unvalidated_entrants_df.event_id.unique())
-    unvalidated_event_ids = sort_event_ids_by_start_date(sql, unvalidated_event_ids)
+    unvalidated_event_ids, month = sort_event_ids_by_start_date(
+        sql, unvalidated_event_ids
+    )
+    if not check_lock(".", (month - 2) % 12 + 1, updated_values=True):
+        logger.info("You need to update player values first")
+        return
     players_to_merge = []
     for event_id in unvalidated_event_ids:
         validated_entrant_ids = []
