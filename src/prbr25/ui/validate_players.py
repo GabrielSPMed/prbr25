@@ -13,8 +13,11 @@ from prbr25.config import (
     POSTGRES_USERNAME,
 )
 from prbr25.consolidate.entrant import validate_player
-from prbr25.consolidate.events import update_tournament_values
-from prbr25.consolidate.matches import consolidate_matches
+from prbr25.consolidate.events import sort_event_ids_by_start_date
+from prbr25.consolidate.matches import (
+    consolidate_matches_and_standings,
+)
+from prbr25.consolidate.merge import merge_players
 from prbr25.consolidate.pandas_utils import get_empty_players_dataframe
 from prbr25.exceptions.exit_player_validation import ExitPlayerValidation
 from prbr25.ui.utils import display_event_being_validated
@@ -31,10 +34,12 @@ def query_entrants_to_validate(sql: Postgres) -> DataFrame:
     return sql.query_db(query, "entrants")
 
 
-def iterate_consolidated_events(
-    sql: Postgres, unvalidated_entrants_df: DataFrame, validated_entrant_ids: list
-):
-    for event_id in unvalidated_entrants_df.event_id.unique():
+def iterate_consolidated_events(sql: Postgres, unvalidated_entrants_df: DataFrame):
+    unvalidated_event_ids = list(unvalidated_entrants_df.event_id.unique())
+    unvalidated_event_ids = sort_event_ids_by_start_date(sql, unvalidated_event_ids)
+    players_to_merge = []
+    for event_id in unvalidated_event_ids:
+        validated_entrant_ids = []
         event_info = query_event_info_from_id(sql, event_id)
         unvalidated_event_entrants_df = unvalidated_entrants_df.loc[
             unvalidated_entrants_df.event_id == event_id
@@ -48,32 +53,34 @@ def iterate_consolidated_events(
                 validated_entrant_ids,
                 event_info,
                 player_df,
+                players_to_merge,
             )
-            edit_filtered_column_from_id(
-                validated_entrant_ids, "entrants", "validated", True
-            )
-            if len(new_players_df) > 0:
-                sql.insert_values_to_table(new_players_df, "players")
-            else:
-                logger.info(
-                    f"No new players for {event_info.tournament_name}: {event_info.event_name}"
-                )
-                matches_df, updated_player_df = consolidate_matches(sql, event_id)
-                tournament_score = update_tournament_values(
-                    sql, event_id, matches_df, updated_player_df
-                )
-                # consolidate standings
+
         except ExitPlayerValidation:
+            if players_to_merge:
+                merge_players(sql, players_to_merge)
             break
+
+        edit_filtered_column_from_id(
+            validated_entrant_ids, "entrants", "validated", True
+        )
+        if len(new_players_df) > 0:
+            sql.insert_values_to_table(new_players_df, "players")
+        else:
+            logger.info(
+                f"No new players for {event_info.tournament_name.iloc[0]}: {event_info.event_name.iloc[0]}"
+            )
+        consolidate_matches_and_standings(sql, event_id, event_info)
+        if players_to_merge:
+            merge_players(sql, players_to_merge)
 
 
 def validate_players():
     sql = Postgres(
         POSTGRES_USERNAME, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT
     )
-    validated_entrant_ids = []
     unvalidated_entrants_df = query_entrants_to_validate(sql)
-    iterate_consolidated_events(sql, unvalidated_entrants_df, validated_entrant_ids)
+    iterate_consolidated_events(sql, unvalidated_entrants_df)
 
 
 def iterate_players(
@@ -82,6 +89,7 @@ def iterate_players(
     validated_entrant_ids: list,
     event_info: DataFrame,
     existing_player_df: DataFrame,
+    players_to_merge: list,
 ) -> DataFrame:
     total_entrants_to_validate = len(unvalidated_entrants_df)
     counter = 1
@@ -100,6 +108,7 @@ def iterate_players(
                 tournament_player_df,
                 event_info,
                 existing_player_df,
+                players_to_merge,
             )
         except ExitPlayerValidation as e:
             if validated_entrant_ids:
@@ -115,3 +124,11 @@ def iterate_players(
             raise e
         counter += 1
     return tournament_player_df
+
+
+def consolidate_missing_event(event_id: int):
+    sql = Postgres(
+        POSTGRES_USERNAME, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT
+    )
+    event_info = query_event_info_from_id(sql, event_id)
+    consolidate_matches_and_standings(sql, event_id, event_info)
