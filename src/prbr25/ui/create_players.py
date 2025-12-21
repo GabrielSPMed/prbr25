@@ -1,10 +1,10 @@
 from InquirerPy import inquirer
-from pandas import DataFrame, Series, concat
+from pandas import DataFrame, Series, concat, isna
 from prbr25_db_ops.player.tag_search import fuzzy_tag_search
 from prbr25_logger.logger import setup_logger
 
 from prbr25.exceptions.exit_player_validation import ExitPlayerValidation
-from prbr25.ui.not_yet_implemented import not_yet_implemented
+from prbr25.ui.merge_players import ask_for_player_id
 from prbr25.ui.utils import display_dataframe, display_event_being_validated
 
 logger = setup_logger(__name__)
@@ -16,15 +16,15 @@ def display_similar_players(entrant: Series, players: DataFrame, event_info: Dat
         players_search_df = fuzzy_tag_search(players.copy(), entrant.tag)
         players_search_df = players_search_df.sort_values(
             by="tag_match_score", ascending=False
-        ).head(5)
+        )
         col_list = ["tag", "id", "url", "state", "anonymous", "tag_match_score"]
         logger.info("Best national matches")
-        display_dataframe(players_search_df, col_list)
+        display_dataframe(players_search_df.head(5), col_list)
         logger.info(f"Best matches in {event_info.address_state.iloc[0]}")
         display_dataframe(
             players_search_df[
                 players_search_df.state == event_info.address_state.iloc[0]
-            ],
+            ].head(5),
             col_list,
         )
 
@@ -32,8 +32,11 @@ def display_similar_players(entrant: Series, players: DataFrame, event_info: Dat
         logger.info("NO AVAILABLE TAGS TO COMPARE")
 
 
-def new_player_screen(entrant: Series, existing_player_df: DataFrame) -> DataFrame:
-    if entrant.player_id:
+def new_player_screen(
+    entrant: Series, existing_player_df: DataFrame, players_to_merge: list
+) -> DataFrame:
+    if not isna(entrant.player_id):
+        print(entrant.url)
         message = f"Choose an option for {entrant.tag}:"
     else:
         message = f"Choose an option for ANONYMOUS {entrant.tag}:"
@@ -49,18 +52,67 @@ def new_player_screen(entrant: Series, existing_player_df: DataFrame) -> DataFra
 
     match choice:
         case "Create new player":
-            if entrant.player_id:
-                return create_player_known_id(existing_player_df, entrant)
-            else:
-                return create_player_anonymous(existing_player_df, entrant)
+            return create_player(entrant, existing_player_df, players_to_merge)
         case "Merge entrant into existing player":
-            not_yet_implemented()
-            raise ExitPlayerValidation()
+            base_player_id = ask_for_player_id(True)
+            return create_player(
+                entrant,
+                existing_player_df,
+                players_to_merge,
+                merge=True,
+                base_player_id=base_player_id,
+            )
         case "Merge existing player into entrant":
-            not_yet_implemented()
-            raise ExitPlayerValidation()
+            merged_player_id = ask_for_player_id(True)
+            return create_player(
+                entrant,
+                existing_player_df,
+                players_to_merge,
+                merge=True,
+                merged_player_id=merged_player_id,
+            )
         case _:
             raise ExitPlayerValidation()
+
+
+def create_player(
+    entrant: Series,
+    existing_player_df: DataFrame,
+    players_to_merge: list,
+    merge: bool = False,
+    base_player_id: int = 0,
+    merged_player_id: int = 0,
+) -> DataFrame:
+    if not isna(entrant.player_id):
+        merging_player_id = int(entrant.player_id)
+        add_to_merge_list(
+            players_to_merge, merging_player_id, merge, base_player_id, merged_player_id
+        )
+        return create_player_known_id(existing_player_df, entrant)
+    else:
+        merging_player_id = int(entrant.id)
+        add_to_merge_list(
+            players_to_merge, merging_player_id, merge, base_player_id, merged_player_id
+        )
+        return create_player_anonymous(existing_player_df, entrant)
+
+
+def add_to_merge_list(
+    players_to_merge: list,
+    merging_player_id: int,
+    merge: bool,
+    base_player_id: int,
+    merged_player_id: int,
+):
+    if merge:
+        if base_player_id != 0:
+            players_to_merge.append(
+                {"base": base_player_id, "delete": merging_player_id}
+            )
+        if merged_player_id != 0:
+            players_to_merge.append(
+                {"base": merging_player_id, "delete": merged_player_id}
+            )
 
 
 def create_player_known_id(existing_player_df: DataFrame, entrant: Series) -> DataFrame:
@@ -73,7 +125,7 @@ def create_player_known_id(existing_player_df: DataFrame, entrant: Series) -> Da
     new_row = DataFrame(
         [
             {
-                "id": entrant.player_id,
+                "id": int(entrant.player_id),
                 "tag": entrant.tag,
                 "value": int(player_value),
                 "url": entrant.url,
@@ -97,7 +149,7 @@ def create_player_anonymous(
     new_row = DataFrame(
         [
             {
-                "id": entrant.id,
+                "id": int(entrant.id),
                 "tag": entrant.tag,
                 "value": int(player_value),
                 "url": entrant.url,
