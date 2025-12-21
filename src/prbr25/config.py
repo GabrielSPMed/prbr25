@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+YEAR = int(environ["YEAR"])
 STARTGG_BEARER_TOKEN = environ["STARTGG_BEARER_TOKEN"]
 POSTGRES_USERNAME = environ["POSTGRES_USERNAME"]
 POSTGRES_PASSWORD = environ["POSTGRES_PASSWORD"]
