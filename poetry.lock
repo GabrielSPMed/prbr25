@@ -1123,7 +1123,7 @@ resolved_reference = "6059aed9f4a46e7d7315edba54542b8e8bb838d8"
 
 [[package]]
 name = "prbr25-db-ops"
-version = "0.5.1"
+version = "0.6.0"
 description = ""
 optional = false
 python-versions = ">=3.12"
@@ -1141,7 +1141,7 @@ thefuzz = ">=0.22.1,<0.23.0"
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-db-ops"
 reference = "HEAD"
-resolved_reference = "c61860dbb41b412f306f006c576f7e4d7adae68f"
+resolved_reference = "bcc1f8e41bdc5ad3735f33e4085bb352423be987"
 
 [[package]]
 name = "prbr25-logger"
