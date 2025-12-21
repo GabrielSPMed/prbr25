@@ -43,4 +43,7 @@ def consolidate_matches_and_standings(
         event_info.tournament_name.iloc[0],
         event_info.event_name.iloc[0],
         weight_dict,
+        tournament_score,
+        len(dq_players_list),
+        event_info.num_entrants.iloc[0],
     )
