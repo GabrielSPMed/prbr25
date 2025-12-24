@@ -227,14 +227,14 @@ files = [
 
 [[package]]
 name = "botocore"
-version = "1.42.14"
+version = "1.42.16"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "botocore-1.42.14-py3-none-any.whl", hash = "sha256:efe89adfafa00101390ec2c371d453b3359d5f9690261bc3bd70131e0d453e8e"},
-    {file = "botocore-1.42.14.tar.gz", hash = "sha256:cf5bebb580803c6cfd9886902ca24834b42ecaa808da14fb8cd35ad523c9f621"},
+    {file = "botocore-1.42.16-py3-none-any.whl", hash = "sha256:b1f584a0f8645c12e07bf6ec9c18e05221a789f2a9b2d3c6291deb42f8c1c542"},
+    {file = "botocore-1.42.16.tar.gz", hash = "sha256:29ee8555cd5d5023350405387cedcf3fe1c7f02fcb8060bf9e01602487482c25"},
 ]
 
 [package.dependencies]
@@ -1123,7 +1123,7 @@ resolved_reference = "6059aed9f4a46e7d7315edba54542b8e8bb838d8"
 
 [[package]]
 name = "prbr25-db-ops"
-version = "0.6.0"
+version = "1.0.1"
 description = ""
 optional = false
 python-versions = ">=3.12"
@@ -1135,13 +1135,14 @@ develop = false
 pandas = ">=2.3.3,<3.0.0"
 prbr-rds-client = {git = "https://github.com/GabrielSPMed/prbr-rds-client.git"}
 prbr25-logger = {git = "https://github.com/GabrielSPMed/prbr25-logger"}
+prbr25-weights = {git = "https://github.com/GabrielSPMed/prbr25-weights"}
 thefuzz = ">=0.22.1,<0.23.0"
 
 [package.source]
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-db-ops"
 reference = "HEAD"
-resolved_reference = "bcc1f8e41bdc5ad3735f33e4085bb352423be987"
+resolved_reference = "48270da919b0e0b26f516432927477caf8946428"
 
 [[package]]
 name = "prbr25-logger"
@@ -1161,7 +1162,7 @@ resolved_reference = "ed26400ca9f908ea95d2b87e9ebeef667b0ed197"
 
 [[package]]
 name = "prbr25-weights"
-version = "1.0.1"
+version = "1.1.0"
 description = ""
 optional = false
 python-versions = ">=3.12"
@@ -1169,11 +1170,14 @@ groups = ["main"]
 files = []
 develop = false
 
+[package.dependencies]
+pandas = ">=2.3.3,<3.0.0"
+
 [package.source]
 type = "git"
 url = "https://github.com/GabrielSPMed/prbr25-weights"
 reference = "HEAD"
-resolved_reference = "076658b418291be2f174f6cca1f7517e82d57a59"
+resolved_reference = "9bdeb7baf7754a8df91300cbb4733e99c025ff05"
 
 [[package]]
 name = "prompt-toolkit"
