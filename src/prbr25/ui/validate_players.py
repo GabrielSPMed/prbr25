@@ -40,7 +40,7 @@ def iterate_consolidated_events(sql: Postgres, unvalidated_entrants_df: DataFram
     unvalidated_event_ids, month = sort_event_ids_by_start_date(
         sql, unvalidated_event_ids
     )
-    if month != 12 and not check_lock(".", (month - 2) % 12 + 1, updated_values=True):
+    if month != 12 and not check_lock(".", (month - 2) % 12 + 1, report=True):
         logger.info("You need to update player values first")
         return
     players_to_merge = []
