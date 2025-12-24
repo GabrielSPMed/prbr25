@@ -3,8 +3,8 @@ from prbr25_db_ops.reporting.lock.initialization import init_monthly_lock
 from prbr25_startgg_queries.entrypoint import refresh_raw_events
 
 from prbr25.config import YEAR
+from prbr25.ui.generate_report import generate_report
 from prbr25.ui.merge_players import display_merge_players
-from prbr25.ui.not_yet_implemented import not_yet_implemented
 from prbr25.ui.upload_tournament import upload_tournament
 from prbr25.ui.utils import clear_screen
 from prbr25.ui.validate_events import validate_events
@@ -12,7 +12,7 @@ from prbr25.ui.validate_players import validate_players
 
 
 def main_menu():
-    init_monthly_lock(".", YEAR, 12)
+    init_monthly_lock(".", YEAR - 1, 12)
     while True:
         clear_screen()
         choice = inquirer.select(
@@ -41,9 +41,7 @@ def main_menu():
             case "Merge Players":
                 display_merge_players()
             case "Generate Monthly Report":
-                not_yet_implemented()
-            case "Update Monthly Player Values":
-                not_yet_implemented()
+                generate_report(YEAR - 1, 12)
             case _:
                 break
         input("Press Enter to go back...")
